@@ -1,0 +1,19 @@
+<?php
+
+/**
+ * @file
+ * Describe the file
+ *
+ * @author Mathew Winstone <mwinstone@coldfrontlabs.ca>
+ * @copyright 2011 Coldfront Labs Inc.
+ * @license Copyright (c) 2011 All rights reserved
+ */
+
+/**
+ * Implements hook_uninstall().
+ */
+function jquerymobile_datebox_uninstall() {
+  variable_del('jquerymobile_datebox_dev');
+}
+
+// @todo add hook_requirements

@@ -1,0 +1,55 @@
+<?php
+
+/**
+ * @file
+ * Defines the library entry
+ *
+ * @author Mathew Winstone <mwinstone@coldfrontlabs.ca>
+ * @copyright 2011 Coldfront Labs Inc.
+ * @license Copyright (c) 2011 All rights reserved
+ */
+
+/**
+ * Implements hook_library().
+ */
+function jquerymobile_datebox_library() {
+  // Datebox library
+  $libraries['datebox'] = array(
+    'title' => 'Datebox',
+    'website' => 'http://dev.jtsage.com/jQM-DateBox/',
+    'version' => '1.0rc1',
+    'js' => array(
+      libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.min.js' => array(),
+    ),
+    'css' => array(
+      libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.min.css' => array(
+        'type' => 'file',
+        'media' => 'screen',
+      ),
+    ),
+  );
+  return $libraries;
+}
+
+/**
+ * Implements hook_library_alter().
+ *
+ * Loads the unminified version of the library when development mode is
+ * enabled
+ */
+function jquerymobile_datebox_library_alter(&$libraries, $module) {
+  if (variable_get('jquerymobile_datebox_dev', FALSE)) {
+    if ($module == 'jquerymobile_datebox' && isset($libraries['datebox'])) {
+      $libraries['datebox']['js'] = array(
+        libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.js' => array(),
+      );
+    $libraries['datebox']['css'] = array(
+      libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.css' => array(
+        'type' => 'file',
+        'media' => 'screen',
+      ),
+    );
+    }    
+  }
+}
+

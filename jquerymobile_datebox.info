@@ -1,0 +1,15 @@
+; @author Mathew Winstone <mwinstone@coldfrontlabs.ca>
+; @copyright 2011 Coldfront Labs Inc.
+; @license Copyright (c) 2011 All rights reserved
+
+name = jQuery Mobile Datebox
+description = Adds the jQuery Mobile plugin Datebox into Drupal.
+core = 7.x
+version = 7.x-1.0-dev
+
+dependencies[] = elements
+dependencies[] = libraries
+dependencies[] = jquerymobile
+
+files[] = jquerymobile_datebox.module
+files[] = jquerymobile_datebox.install
