@@ -19,7 +19,9 @@ function jquerymobile_datebox_library() {
     'website' => 'http://dev.jtsage.com/jQM-DateBox/',
     'version' => '1.0rc1',
     'js' => array(
-      libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.min.js' => array(),
+      libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.min.js' => array(
+        'weight' => (int)JQUERYMOBILE_LIBRARY_WEIGHT + 1;
+      ),
     ),
     'css' => array(
       libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.min.css' => array(
