@@ -20,7 +20,7 @@ function jquerymobile_datebox_library() {
     'version' => '1.0rc1',
     'js' => array(
       libraries_get_path('jquerymobile-datebox') . '/jquery.mobile.datebox.min.js' => array(
-        'weight' => (int)JQUERYMOBILE_LIBRARY_WEIGHT + 1;
+        'weight' => (int)JQUERYMOBILE_LIBRARY_WEIGHT + 1,
       ),
     ),
     'css' => array(
